@@ -8,16 +8,16 @@ let escortList = {
             age: 36,
             details: "KodeGo Student. Coder since 2003. Government Underemployed.",
             rate: 4500,
-            image: "https://picsum.photos/seed/666/100/100",
+            image: "https://www.themaleescortagency.com/us/wp-content/uploads/2022/10/20220403_192627-400x400.jpg",
             isSelected: false
         },
         {
             id: 888,
-            name: "Jhomer Felecis",
+            name: "Alex Felecis",
             age: 25,
             details: "Business Owner. Privately employed as Administrative support.",
             rate: 3500,
-            image: "https://picsum.photos/seed/888/100/100",
+            image: "https://manilacourtesans.com/wp-content/uploads/2023/01/1-5.jpg",
             isSelected: false
         },
         {
@@ -26,7 +26,7 @@ let escortList = {
             age: 19,
             details: "Top-A Student and Licensed Accupuncturist. Add 150 for extra service (hetero-sensual only).",
             rate: 5000,
-            image: "https://picsum.photos/seed/1/100/100",
+            image: "https://www.themaleescortagency.com/us/wp-content/uploads/2022/11/image3-1-400x400.jpeg",
             isSelected: false
         },
         {
@@ -35,7 +35,7 @@ let escortList = {
             age: 65,
             details: "Professional Nanny and Massage Therapist. She does not offer extra service.",
             rate: 8000,
-            image: "https://picsum.photos/seed/2/100/100",
+            image: "https://manilacourtesans.com/wp-content/uploads/2023/01/15.jpg",
             isSelected: false
         },
         {
@@ -44,7 +44,7 @@ let escortList = {
             age: 45,
             details: "10-Year Security Guard. Add coffee for extra service (hetero- and homo-sensual).",
             rate: 10000,
-            image: "https://picsum.photos/seed/3/100/100",
+            image: "https://www.themaleescortagency.com/us/wp-content/uploads/2022/12/IMG-20221212-WA0012-400x400.jpg",
             isSelected: false
         },
         {
@@ -53,7 +53,7 @@ let escortList = {
             age: 24,
             details: "Very attractive and a good enemy-distraction. For business personalities only. No extra service.",
             rate: 15000,
-            image: "https://picsum.photos/seed/4/100/100",
+            image: "https://manilacourtesans.com/wp-content/uploads/2023/01/4-16.jpg",
             isSelected: false
         },
         {
@@ -62,7 +62,7 @@ let escortList = {
             age: 16,
             details: "Student and Theater Actor. No extra service.",
             rate: 2500,
-            image: "https://picsum.photos/seed/5/100/100",
+            image: "https://www.themaleescortagency.com/us/wp-content/uploads/2023/01/BB_Headshot-400x400.jpg",
             isSelected: false
         },
         {
@@ -71,7 +71,7 @@ let escortList = {
             age: 75,
             details: "Traditional Cook. Mother of Tarzan. Add 1500 for extra service (all the way)",
             rate: 1500,
-            image: "https://picsum.photos/seed/6/100/100",
+            image: "https://manilacourtesans.com/wp-content/uploads/2023/01/6-14.jpg",
             isSelected: false
         }
     ],
