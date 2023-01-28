@@ -80,19 +80,19 @@ let escortList = {
         this.everyone.forEach(function(one){
             html+=`
 <div id="${one.id}" class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-<div class="card h-100">
-<img src="${one.image}" alt="Image" class="card-image-top rounded-top">
-<div class="card-body">
-    <h3 class="card-title mb-1">${one.name}</h3>
-    <h5 class="card-subtitle mb-2 text-muted">${one.age}</h5>
-    <div class="card-text">${one.details}</div>
-</div>
-<div class="card-footer d-flex p-2 flex-wrap justify-content-around">
-    <h1 class="card-text col-12">&#x20B1;${one.rate}/day</h1>
-    <button class="btn btn-primary col-5" onclick="escortList.addToBoys('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Add to Boys</button>
-    <button class="btn btn-danger col-5" onclick="escortList.addToGirls('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Add to Girls</button>
-</div>
-</div>
+    <div class="card h-100">
+        <img src="${one.image}" alt="Image" class="card-image-top rounded-top">
+        <div class="card-body">
+            <h3 class="card-title mb-1">${one.name}</h3>
+            <h5 class="card-subtitle mb-2 text-muted">${one.age}</h5>
+            <div class="card-text">${one.details}</div>
+        </div>
+        <div class="card-footer d-flex p-2 flex-wrap justify-content-around">
+            <h1 class="card-text col-12">&#x20B1;${one.rate}/day</h1>
+            <button class="btn btn-primary col-5" onclick="escortList.addToBoys('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Add to Boys</button>
+            <button class="btn btn-danger col-5" onclick="escortList.addToGirls('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Add to Girls</button>
+        </div>
+    </div>
 </div>
 `;
         });
@@ -103,25 +103,26 @@ let escortList = {
         this.boys.forEach(function(one){
             html+=`
 <li class="list-group-item list-group-item-action mb-2 border-0 d-flex flex-row p-0 m-0 rounded justify-content-between" style="height: 44px;">
-<img src="${one.image}" alt="Image" class="rounded-start h-100 me-2">
-<div class="fs-5 mt-2">${one.name}, ${one.age}, &#x20B1;${one.rate}/day <a href="#" data-bs-toggle="modal" data-bs-target="#modal${one.id}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
-<button class="btn btn-warning" onclick="escortList.removeFromBoysList('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Remove</button>
+    <img src="${one.image}" alt="Image" class="rounded-start h-100 me-2">
+    <div class="fs-5 mt-2">${one.name}, ${one.age}, &#x20B1;${one.rate}/day <a href="#" data-bs-toggle="modal" data-bs-target="#modal${one.id}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
+    <button class="btn btn-light" onclick="escortList.moveToGirls('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Move to Girls</button>
+    <button class="btn btn-warning" onclick="escortList.removeFromBoysList('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Remove</button>
 </li>
 <div class="modal fade" id="modal${one.id}" tabindex="-1" aria-labelledby="modal${one.id}Label" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-    <div class="modal-header">
-        <h1 class="modal-title fs-5" id="modal${one.id}Label">${one.name}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal${one.id}Label">${one.name}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ${one.details}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-    <div class="modal-body">
-        ${one.details}
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    </div>
-</div>
-</div>
 </div>
 `;
         });
@@ -132,25 +133,26 @@ let escortList = {
         this.girls.forEach(function(one){
             html+=`
 <li class="list-group-item list-group-item-action mb-2 border-0 d-flex flex-row p-0 m-0 rounded justify-content-between" style="height: 44px;">
-<img src="${one.image}" alt="Image" class="rounded-start h-100 me-2">
-<div class="fs-5 mt-2">${one.name}, ${one.age}, &#x20B1;${one.rate}/day <a href="#" data-bs-toggle="modal" data-bs-target="#modal${one.id}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
-<button class="btn btn-warning" onclick="escortList.removeFromGirlsList('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Remove</button>
+    <img src="${one.image}" alt="Image" class="rounded-start h-100 me-2">
+    <div class="fs-5 mt-2">${one.name}, ${one.age}, &#x20B1;${one.rate}/day <a href="#" data-bs-toggle="modal" data-bs-target="#modal${one.id}"><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
+    <button class="btn btn-light" onclick="escortList.moveToBoys('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Move to Boys</button>
+    <button class="btn btn-warning" onclick="escortList.removeFromGirlsList('${one.id}', '${one.name}', '${one.age}', '${one.details}', '${one.rate}', '${one.image}', '${one.isSelected}')">Remove</button>
 </li>
 <div class="modal fade" id="modal${one.id}" tabindex="-1" aria-labelledby="modal${one.id}Label" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-    <div class="modal-header">
-        <h1 class="modal-title fs-5" id="modal${one.id}Label">${one.name}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal${one.id}Label">${one.name}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ${one.details}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-    <div class="modal-body">
-        ${one.details}
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    </div>
-</div>
-</div>
 </div>
 `;
         });
@@ -171,6 +173,21 @@ let escortList = {
         this.boys.push(escort);
         this.showBoysList();
     },
+    moveToBoys(id, name, age, details, rate, image, isSelected) {
+        let escort = { id: null, name: null, age: null, details: null, rate: null, image: null, isSelected: null };
+        escort.id=id;
+        escort.name=name;
+        escort.age=age;
+        escort.details=details;
+        escort.rate=rate;
+        escort.image=image;
+        escort.isSelected=isSelected;
+        let index = this.girls.indexOf(escort);
+        this.girls.splice(index);
+        escort.isSelected=true;
+        this.boys.push(escort);
+        this.showBoysList();
+    },
     addToGirls(id, name, age, details, rate, image, isSelected) {
         let escort = { id: null, name: null, age: null, details: null, rate: null, image: null, isSelected: null };
         escort.id=id;
@@ -182,6 +199,21 @@ let escortList = {
         escort.isSelected=isSelected;
         let index = this.everyone.indexOf(escort);
         this.everyone.splice(index);
+        escort.isSelected=true;
+        this.girls.push(escort);
+        this.showGirlsList();
+    },
+    moveToGirls(id, name, age, details, rate, image, isSelected) {
+        let escort = { id: null, name: null, age: null, details: null, rate: null, image: null, isSelected: null };
+        escort.id=id;
+        escort.name=name;
+        escort.age=age;
+        escort.details=details;
+        escort.rate=rate;
+        escort.image=image;
+        escort.isSelected=isSelected;
+        let index = this.boys.indexOf(escort);
+        this.boys.splice(index);
         escort.isSelected=true;
         this.girls.push(escort);
         this.showGirlsList();
